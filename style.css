@@ -31,7 +31,7 @@ body{
 	background: url(./banner1.jpg);
 	height:90vh;
 	background-size: cover;
-	background-position: bottom;
+	background-position: center;
 }
 .container{
 	width:100%;
@@ -64,6 +64,7 @@ body{
 	color: white;
 	font-size: 16px;
 	text-transform: uppercase;
+	font-weight: bold;
 	
 }	
 .nav li a:hover{
@@ -493,11 +494,15 @@ h2{font-size: 15px;}
 }
 @media only screen and (max-width: 674px) {
 	.banner-heading{top: 30%;}
-	.section-4 {height: 125vh;padding-top: 65px;}
+	.section-2 {height: 175vh;}
+	.box-1 {margin-left: 0px;}
+	.section-4 {height: 275vh;padding-top: 35px;}
 	.container{width: 320px;}
+	.pro-ul {display: flex; flex-direction: column; justify-content: center;}
 	.pro-ul li {width: 100%;}
 	.c-p2 {line-height: 20px;letter-spacing: 0.8px;font-size: 14px;}
 	.h1{font-size: 18px;}
 	.p1{font-size: 12px;}
 	.section-1{height: 60vh;}
+	.sec-5 .content {height: 80vh;}
 }
