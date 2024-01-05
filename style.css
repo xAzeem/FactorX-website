@@ -621,7 +621,13 @@ h2{font-size: 15px;}
 	 .home {display: none;}
 }
 @media only screen and (max-width: 674px) {
-	.banner-heading{top: 55%;}
+	.banner-heading{top: 30%;}
+	.slides {
+        height: 50vh;
+    }
+    .slides img {
+        object-position: center;
+    }
 	.section-2 {height: 175vh;}
 	.box-1 {margin-left: 0px;}
 	.section-4 {height: 200vh;padding-top: 35px;}
@@ -635,7 +641,7 @@ h2{font-size: 15px;}
 	td {padding: 5px; font-size: 12px;}
 	.table-container{width: 100%;}
 	.table-section{padding-top: 0px;}
-	.section-1{height: 90vh;}
+	.section-1{height: 50vh;}
 	.sec-5 .content {height: 65vh;}
 	.navbar-brand img {width: 100px; height: 78px;}
 	.field {width: 77%;}
