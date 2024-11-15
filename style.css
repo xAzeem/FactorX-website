@@ -55,17 +55,14 @@ header {
     z-index: 1000;
 	padding: 0px 30px;
 }
-
-.slider {
-    width: 100%;
-    position: relative;
-
-}
-
-.slides {
-    position: relative;
-    height: 90vh;
-    overflow: hidden;
+.section-1 {
+    background-color: #000;
+    color: white;
+    /* padding-top: 80px; */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide1 {
@@ -138,37 +135,109 @@ header {
 .menu-icon{
 	display: none;
 }
-.banner-heading{
-	position: absolute;
-	transform: translate(-50%,-50%);
-	top: 65%;
-	left: 50%;
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.banner-left {
+    flex: 1;
+    padding: 2rem;
+}
+.left-side {
+	max-width: 550px
+}
+.banner-right {
+    flex: 1;
+    text-align: right;
+    padding: 2rem;
+}
+
+.banner-image {
+    max-width: 80%;
+    border-radius: 10%;
+    height: 60vh;
+}
+
+.h1 {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+}
+.highlight {
+    background-color: white;
+    color: black;
+    padding: 0 8px;
+    border-radius: 4px;
+}
+.subtitle {
+    font-size: 28px;
+    margin: 0.5rem 0 2rem;
+    color: #d3d3d3;
 	text-align: center;
+	
 }
-.h1{
-	font-size: 50px;
-	color: white;
-	font-weight: bold;
-	margin: 0px;
+
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+	
 }
-.p1{
-	text-align: center;
-	color: white;
-	font-size: 18px;
+
+.button-box {
+    background-color: white;
+    color: black;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
-.learn{
-	    font-size: 17px;
+
+.icon {
+    font-size: 28px;
+    margin-bottom: 0.5rem;
+}
+
+/* Black Friday badge */
+/* .black-friday {
+    background-color: black;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+} */
+
+/* Icon classes for different categories (you may replace with actual icons if using a library like FontAwesome) */
+.energy-icon::before { content: "🔋"; }
+.broadband-icon::before { content: "📶"; }
+.sim-icon::before { content: "📱"; }
+.mobile-icon::before { content: "📞"; }
+
+.learn {
+    font-size: 17px;
     padding: 10px 30px;
     background: transparent;
     color: white;
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
-	text-decoration: none;
+    text-decoration: none;
 }
-.learn:hover{
-	color: rgb(255, 255, 255);
-	background-color: #c23843;
+
+.learn:hover {
+    background-color: #c23843;
+    color: white;
 }
 .section-2{
 	text-align: center;
