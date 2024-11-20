@@ -6,7 +6,7 @@
 body{
 	margin: 0px;
 	padding: 0px;
-	background: #28262e;
+	background: white;
 	overflow-x: hidden;
 	font-family: 'Lora', serif;
 }
@@ -199,12 +199,6 @@ header {
     margin-top: 0.5rem;
 } */
 
-/* Icon classes for different categories (you may replace with actual icons if using a library like FontAwesome) */
-.energy-icon::before { content: "🔋"; }
-.broadband-icon::before { content: "📶"; }
-.sim-icon::before { content: "📱"; }
-.mobile-icon::before { content: "📞"; }
-
 .learn {
     font-size: 17px;
     padding: 10px 30px;
@@ -273,30 +267,48 @@ header {
     color: #c23843;
     padding-top: 25px;
 }
-.section-3{
-	text-align: center;
-}
-.col-div-4{
-	width: 33.3%;
-	float: left;
-}
-.box-1{
-	background: #2f2e33;
-    padding: 10px;
-    color: #fff;
+.section-3 {
     text-align: center;
-    margin-left: 20px;
-    margin-top: 50px;
-	margin-bottom: 20px;
+    background-color: white;
 }
-.service-img{
-	width: 140px;
-	height: auto;
-	border-radius: 50%;
+
+.containerss {
+    width: 80%;
+    margin: 0 auto;
 }
-h2{
-	color: white;
-	font-weight: 400;
+
+.heding {
+    color: black;
+    font-size: 22px;
+
+    font-weight: 600;
+}
+
+.service-row {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+
+.service-text {
+    flex: 1;
+    color: black;
+    /* text-align: left; */
+    padding: 0 20px 0 0;
+    text-align: justify;
+    font-weight: 500;
+}
+
+.service-image {
+    flex: 1;
+    text-align: end;
+}
+
+.service-img {
+    width: 95%;
+    height: auto;
+    border-radius: 20px;
 }
 .section-4{
 	text-align: center;
