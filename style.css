@@ -91,11 +91,13 @@ header {
 	color: rgb(0, 0, 0);
 	font-size: 16px;
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: 600;
 	
 }	
 .nav li a:hover{
-	color: #b30000;
+	color: #000000;
+    font-weight: 700;
+    font-size: 16px;
 }
 .get-btn{
 	padding: 10px 30px;
@@ -310,38 +312,126 @@ header {
     height: auto;
     border-radius: 20px;
 }
-.section-4{
-	text-align: center;
-	background-image: url(./sec-4.jpg);
-	height: 130vh;
-	background-size: cover;
-	margin-top: 20px;
-	padding-top: 50px;
+.section-about {
+    text-align: center;
+    background-color: black;
 }
-.p4{
-	color: #d4d0d0;
-    letter-spacing: 0.8px;
-    line-height: 28px;
+.container-about {
+    width: 80%;
+    margin: 0 auto;
 }
-.pro-ul{
-	display: flex;
-	justify-content: center;
+.service-textabout {
+    flex: 1;
+    color: white;
+    /* text-align: left; */
+    padding: 0 20px 0 0;
+    text-align: justify;
+    font-weight: 500;
 }
-.pro-ul li{
-	list-style: none;
-	float: left;
-	color: white;
-	position: relative;
-	width: 264px;
-	text-align: left;
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
 
+/* Title */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
 }
-.no{
-	font-size: 60px;
-    font-weight: bold;
-    color: #c23843;
-	
+
+/* Icon and Text Section */
+.icon-text-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
+
+.icon-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.icon-text:hover {
+    transform: translateY(-5px);
+}
+
+.icon-text i {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.p4 {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* CTA */
+.cta-text {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    color: #444;
+}
+
+/* Cards Section */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .icon-text {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-text {
+        font-size: 1rem;
+    }
+}
+
+
+
 .button{
 	background-color: #c23843 !important;
 	border-color: #b30000 !important;
@@ -395,11 +485,13 @@ letter-spacing: 1.8px;
 	width: 50%;
 	float: left;
 	height: 400px;
-	background: #cb3541;
+	background: #000;
+
 }
 .content{
 	padding: 20px;
 	color: white;
+    text-align: justify;
 }
 .c-p1{
 	font-size: 22px;
@@ -412,18 +504,18 @@ letter-spacing: 1.8px;
     letter-spacing: 0.8px;
 	margin: 0;
 }
-.right::after{
+/* .right::after{
 	content: '';
     position: absolute;
     width: 100px;
     height: 100px;
-    background: #cb3541;
-    right: 47%;
+    background: #494949;
+    right: 46.8%;
     top: 165px;
     transform: rotate(
 45deg
 );
-}
+} */
 .left{
 	width: 50%;
 	float: left;
@@ -533,13 +625,13 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .table-section2{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: black;
 }
 .table-container {
     margin: 20px;
@@ -553,7 +645,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #fff;
+    border: 1px solid #000000;
 }
 
 td {
