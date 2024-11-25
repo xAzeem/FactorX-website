@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+    <link rel="icon" href="icon2.png" type="image/png">
+    <title>Compare Energy</title>
+</head>
+<body>
+    <section class="section-1" style="min-height: 68px;">
+        <header>
+                <div class="col-div-3">
+                    <a href="index.html"><img src="logo-nav.jpg" style="max-height: 70px; width: 160px; padding: 1px 0px 0px 20px;"  alt="logo"  srcset=""></a>
+                </div>
+                <div class="col-div-12 ">
+                    <ul class="nav" style="margin: 16px;">		
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+                <div class="col-div-3">
+                    
+                    <a href="#" class="menu-icon">&#9776;</a>
+                </div>
+                <div class="clearfix"></div>
+        </header> 
+    </section>
+    <section class="table-section2" style="background-color: rgb(179 179 179 / 50%); height: 90vh;">
+        <div class="containerss" style="display: flex;">
+        <div class="service-row" style="width: 50%;">
+            <div class="compareenergy-form">
+            <h2>Compare Energy</h2>
+            <p style="display: none;">Addresses for Postcode: <span id="postcodeDisplay"></span></p>
+            <h1 style="font-weight: 600;">Let’s find your energy details to start</h1>
+            <form id="addressForm">
+                <!-- <label for="addressDropdown">Select Address:</label> -->
+                <select id="addressDropdown" required class="select-text" style="width: 100%;">
+                    <option  value="">Enter a valid postcode first...</option>
+                </select>
+                <br><br>
+                <p>Please enter your details as accurately as possible. By entering your details, you agree to our terms of use and acknowledge our privacy policy.</p>
+                <button type="submit" class="submit-btn" style="width: 100%;">
+                    Submit <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+     </div>
+     <div class="compare-energy">
+        <h2>Change Your Energy Provider in Three Simple Steps</h2>
+        <ol>
+            <li>
+                <strong>Add your details</strong>
+                Provide accurate information to get the best comparison.
+            </li>
+            <li>
+                <strong>Compare deals</strong>
+                Find the perfect deal tailored for you.
+            </li>
+            <li>
+                <strong>Finalize Your Energy Change</strong>
+                We’ll handle the entire process, including contacting your old and new suppliers for a smooth transition.
+            </li>
+        </ol>
+    </div>
+  </div>
+</section>
+    <script>
+        // Extract postcode from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const postcode = urlParams.get("postcode");
+
+        // Display the postcode
+        document.getElementById("postcodeDisplay").textContent = postcode || "Not provided";
+
+        const addressDropdown = document.getElementById("addressDropdown");
+
+        // Function to fetch detailed addresses from the API
+        async function fetchAddresses(postcode) {
+            if (!postcode) {
+                addressDropdown.innerHTML = `<option value="">No postcode provided</option>`;
+                return;
+            }
+
+            try {
+                // Replace with your actual API key
+                const apiKey = "VdZJqV4vu02P-lMyNnuhHg44463"; // Your API key
+                const response = await fetch(`https://api.getaddress.io/autocomplete/${postcode}?api-key=${apiKey}`);
+
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch addresses: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                // Check if addresses are returned
+                if (!data.suggestions || data.suggestions.length === 0) {
+                    addressDropdown.innerHTML = `<option value="">No addresses found</option>`;
+                    return;
+                }
+
+                // Populate the dropdown with the address data
+                addressDropdown.innerHTML = data.suggestions
+                    .map(addr => `<option value="${addr.address}">${addr.address}</option>`)
+                    .join("");
+            } catch (error) {
+                console.error("Error fetching addresses:", error);
+                addressDropdown.innerHTML = `<option value="">Failed to load addresses</option>`;
+            }
+        }
+
+        // Call the fetchAddresses function with the user's postcode
+        fetchAddresses(postcode);
+
+        // Form submission handler
+        const form = document.getElementById("addressForm");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault(); // Prevent page reload
+            const selectedAddress = addressDropdown.value;
+            if (!selectedAddress) {
+                alert("Please select a valid address before submitting!");
+            } else {
+                alert(`Address selected: ${selectedAddress}`);
+                // You can proceed with the selected address (e.g., send to a server)
+            }
+        });
+    </script>
+</body>
+</html>
