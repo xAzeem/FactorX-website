@@ -182,10 +182,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    /* color: inherit;
+    cursor: pointer; */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
 }
-
+.button-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 .icon {
     font-size: 28px;
     margin-bottom: 0.5rem;
@@ -218,12 +224,11 @@ header {
 }
 .section-2{
 	text-align: center;
-	background-image: url(./sec-2.jpg);
+	/* background-image: url(./sec-2.jpg); */
+    background-color: #000;
 	height: 80vh;
-	background-size: cover;
-	padding-top: 15%;
+	padding-top: 2rem;
 	margin-top: -25px;
-	background-position: top;
 }
 .h2{
 	color: white;
@@ -283,20 +288,19 @@ header {
     color: black;
     font-size: 22px;
 
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .service-row {
     display: flex;
     align-items: center;
     margin: 30px 0;
+    flex-wrap: wrap; /* Ensures content wraps for smaller screens */
 }
-
 
 .service-text {
     flex: 1;
     color: black;
-    /* text-align: left; */
     padding: 0 20px 0 0;
     text-align: justify;
     font-weight: 500;
@@ -311,6 +315,25 @@ header {
     width: 95%;
     height: auto;
     border-radius: 20px;
+}
+@media (max-width: 768px) {
+    .service-row {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center-align text and image */
+    }
+
+    .service-text {
+        padding: 0;
+        margin-bottom: 20px; /* Add space between text and image */
+    }
+
+    .service-image {
+        text-align: center; /* Center the image */
+    }
+
+    .service-img {
+        width: 100%; /* Adjust image width for smaller screens */
+    }
 }
 .section-about {
     text-align: center;
@@ -803,7 +826,7 @@ h2{font-size: 15px;}
 	td {padding: 5px; font-size: 12px;}
 	.table-container{width: 100%;}
 	.table-section{padding-top: 0px;}
-	.section-1{height: 50vh;}
+	/* .section-1{height: 50vh;} */
 	.sec-5 .content {height: 65vh;}
 	.navbar-brand img {width: 100px; height: 78px;}
 	.field {width: 77%;}
@@ -815,4 +838,128 @@ h2{font-size: 15px;}
 		display: none;
 	  }
 
+}
+.compare-section {
+    margin: 50px auto;
+}
+
+.compare-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.compare-btn:hover {
+    background-color: #555;
+}
+
+.postcode-form {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.compareenergy-form{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 550px;
+    height: 50vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.form-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.postcode-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.postcode-input:focus {
+    border-color: #0073e6;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #005bb5;
+}
+
+.hidden {
+    display: none;
+}
+.energy-text {
+    color: black;
+    padding: 0 20px 0 0;
+    text-align: justify;
+    font-weight: 500;
+}
+.energy-image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.select-text {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box
+}
+
+.compare-energy {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.compare-energy h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.compare-energy ol {
+    padding-left: 1rem;
+    color: #555;
+}
+
+.compare-energy ol li {
+    margin-bottom: 1rem;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.compare-energy ol li strong {
+    display: block;
+    color: #333;
+    margin-bottom: 0.3rem;
 }

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Factor X Energy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+		<link rel="icon" href="icon2.png" type="image/png">
+</head>
+<body>
+    <section class="section-1" style="min-height: 70px;">
+        <header>
+                <div class="col-div-3">
+                    <a href="index.html"><img src="logo-nav.jpg" style="max-height: 70px; width: 160px; padding: 1px 0px 0px 20px;"  alt="logo"  srcset=""></a>
+                </div>
+                <div class="col-div-12 ">
+                    <ul class="nav" style="margin: 16px;">
+                        
+                        
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="Prices.html">Business prices</a></li>			
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+                <div class="col-div-3">
+                    
+                    <a href="#" class="menu-icon">&#9776;</a>
+                </div>
+                <div class="clearfix"></div>
+        </header> 
+    </section>
+    <section class="table-section2" style="background-color: rgb(121 195 255);">
+        <div class="containerss" style="display: flex;">
+        <div class="service-row">
+            <div class="energy-text">
+                <h2 style="font-weight: bold; font-size: 2rem;">Energy comparison</h2>
+					<p style="margin: 0; font-weight: 600;">With energy prices rising along with our usage during winter, this is the time to see if you could save money with a fixed deal. Run an energy comparison now to protect yourself against high rates.
+                </p>
+                <div class="compare-section">
+                    <button id="compareButton" class="compare-btn">Compare Energy <i class="fas fa-arrow-right"></i></button>
+                    
+                    <div id="postcodeForm" class="postcode-form hidden">
+                        <p class="form-heading">Enter your postcode</p>
+                        <input
+                            type="text"
+                            id="postcodeInput"
+                            class="postcode-input"
+                            placeholder="e.g., SW1A 1AA"
+                            pattern="[A-Z]{1,2}[0-9R][0-9A-Z]?\s?[0-9][A-Z]{2}"
+                            title="Enter a valid UK postcode"
+                            required
+                        />
+                        <button id="submitButton" class="submit-btn">Compare Energy </button>
+                    </div>
+                </div>
+                
+                </div>
+    
+            </div>
+            <div class="energy-image">
+                <img src="serv.webp" class="service-img" alt="SME Service">
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <footer style="background: #1c1b20;">
+        <div class="container-foot">
+            <div class="col-div-3 foot" style="height: 35vh; display: flex; align-items: center;">
+                
+                <img src="logo-navfooter.jpg" alt="about images" class="img-fluid footer_img">
+                
+            </div>
+            <div class="col-div-3 foot">
+            <h4>NAVIGATION</h4>
+                <ul class="foot-ul">
+                    <li><a href="#">Who We Are</a></li>
+                    <li><a href="#"><i class="fab fa-facebook fa-icon"></i></a></li><br>
+                    <li><a href="#"><i class="fab fa-instagram ia-icon"></i></a></li>
+                    <li><a href="#">Business Home</a></li>
+                </ul>
+            </div>
+            <div class="col-div-3 foot">
+            <h4>Quick Links</h4>
+                <ul class="foot-ul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="Prices.html">Business Prices</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-div-3 foot">
+                <h4>Contact</h4>
+                <ul class="foot-ul">
+                    <li>
+                        <a href="#"><img src="location.PNG" class="fot-icon"></a>
+                        <p>VISIT US <br><span>Based In-OXFORDSHIRE</span></p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="email.PNG" class="fot-icon"></a>
+                        <p>EMAIL US <br><span>customerservice@factorxenergy.co.uk</span></p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="call.PNG" class="fot-icon"></a>
+                        <p>CALL US <br><span>02086 385694</span></p>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <br><br>
+        </div>
+        <div class="foot-bottom" style="background: #000;">
+            <p class="bot-p">Copyright &#169; 2023 FACTOR X ENERGY LIMITED. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $(".menu-icon").click(function(){
+            $(".nav").slideToggle();
+            $(".banner-heading").slideToggle();
+          });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    const compareButton = document.getElementById("compareButton");
+    const postcodeForm = document.getElementById("postcodeForm");
+    const submitButton = document.getElementById("submitButton");
+
+    // Show postcode form on Compare Energy button click
+    compareButton.addEventListener("click", function () {
+        compareButton.style.display = "none"; // Hide the initial button
+        postcodeForm.classList.remove("hidden"); // Show the postcode form
+        postcodeForm.style.display = "block"; // Ensure it's visible
+    });
+
+    // Redirect to compare-energy.html on submission
+            submitButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default form submission
+            const postcodeInput = document.getElementById("postcodeInput");
+            const postcode = postcodeInput.value.trim();
+
+            // Validate the postcode
+            const regex = /^[A-Z]{1,2}[0-9R][0-9A-Z]?\s?[0-9][A-Z]{2}$/i;
+            if (!regex.test(postcode)) {
+                alert("Please enter a valid UK postcode.");
+                return;
+            }
+
+            // Redirect to compare-energy.html with the postcode as a query parameter
+            window.location.href = `compare-energy.html?postcode=${encodeURIComponent(postcode)}`;
+        });
+});
+        </script>
+</body>
+</html>
