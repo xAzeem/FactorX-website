@@ -634,7 +634,7 @@ nav{
     white-space: nowrap;
     width: 100%;
     box-sizing: border-box;
-    height: 52px;
+    height: 52px !important;
     background: white;
 }
 
