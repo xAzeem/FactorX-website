@@ -55,3 +55,51 @@ document.addEventListener("DOMContentLoaded", function() {
 //       },
 //     },
 // });
+document.addEventListener("DOMContentLoaded", async function () {
+    const API_URL = "https://widget.trustpilot.com/trustbox-data/56278e9abfbbba0bdcd568bc?businessUnitId=6792a3eee2ccb370dbac2cd6&locale=en-GB&includeReviews=false";  // Replace with the actual Trustpilot API URL if needed
+
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+
+        // Extract data
+        const stars = data.businessEntity.stars;  // Example: 3.5
+        const trustScore = data.businessEntity.trustScore;  // Example: 3.7
+        const totalReviews = data.businessEntity.numberOfReviews.total;  // Example: 10
+
+        // Update TrustScore and Reviews Count
+        document.getElementById("trustscore").innerText = `TrustScore: ${trustScore.toFixed(1)} | ${totalReviews} Reviews`;
+
+        // Display star ratings
+        const starsContainer = document.getElementById("stars-container");
+        starsContainer.innerHTML = getStarRatingHTML(stars);
+
+    } catch (error) {
+        console.error("Error fetching Trustpilot data:", error);
+        document.getElementById("trustscore").innerText = "Failed to load Trustpilot data";
+    }
+});
+
+// Function to generate star rating HTML
+function getStarRatingHTML(rating) {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+    const emptyStars = 5 - fullStars - halfStar;
+
+    let starsHTML = "";
+
+     for (let i = 0; i < fullStars; i++) {
+            starsHTML += `<i class="fas fa-star"style="margin-right: 5px;background-color:  rgb(14, 207, 143);padding: 5px;"></i>`; // Full star
+        }
+
+        if (halfStar) {
+            starsHTML += `<i class="fas fa-star-half-alt"style="margin-right: 5px;background-color:  rgb(14, 207, 143);padding: 5px;"></i>`; // Half star
+        }
+
+        for (let i = 0; i < emptyStars; i++) {
+            starsHTML += `<i class="far fa-star"style="margin-right: 5px;background-color:  rgb(14, 207, 143);padding: 5px;"></i>`; // Empty star
+        }
+
+
+    return starsHTML;
+}
